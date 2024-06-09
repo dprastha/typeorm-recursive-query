@@ -28,4 +28,9 @@ export class CompanyService {
     const company = await this.companyRepository.findOneBy({ id });
     return this.companyRepository.findDescendants(company);
   }
+
+  async findAncestors(id: number): Promise<Company[]> {
+    const company = await this.companyRepository.findOneBy({ id });
+    return this.companyRepository.findAncestors(company);
+  }
 }

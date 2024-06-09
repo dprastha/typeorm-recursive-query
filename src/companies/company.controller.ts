@@ -22,4 +22,9 @@ export class CompanyController {
   async findDescendants(@Param('id') id: number): Promise<Company[]> {
     return this.companiesService.findDescendants(id);
   }
+
+  @Get(':id/ancestors')
+  async findAncestors(@Param('id') id: number): Promise<Company[]> {
+    return this.companiesService.findAncestors(id);
+  }
 }
